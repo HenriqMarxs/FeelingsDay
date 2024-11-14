@@ -1,6 +1,6 @@
 <resources>
-    <string name="app_name">FeelingsDay</string>
+    <string name="app_name">To-Do</string>
     <string name="title_home">Home</string>
-    <string name="title_dashboard">Dashboard</string>
-    <string name="title_notifications">Notifications</string>
+    <string name="title_calendario">Calendario</string>
+    <string name="title_chat">Perfil</string>
 </resources>

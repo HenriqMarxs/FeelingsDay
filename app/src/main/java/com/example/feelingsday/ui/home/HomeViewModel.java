@@ -14,7 +14,7 @@ public class HomeViewModel extends ViewModel {
 
     public HomeViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Next Goals");
+        mText.setValue("12AM -Proxima tarefa");
 
     }
 
