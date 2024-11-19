@@ -1,13 +1,28 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<androidx.cardview.widget.CardView
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
+        android:id ="@+id/listItem"
+        app:layout_constraintTop_toBottomOf="@id/progress_button"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        android:padding="16dp"
-        tools:context=".ui.home.HomeFragment">
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginEnd="12dp"
+        android:layout_marginVertical="10dp"
+        android:layout_marginHorizontal="10dp"
+        app:cardCornerRadius="20dp"
+        app:cardElevation="8dp">
+
+    <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+    <com.google.android.material.imageview.ShapeableImageView
+    android:layout_width="60dp"
+    android:layout_height="15dp"
+    android:id="@+id/listImage"
+    android:src="@drawable/laptop_14960026"/>
 
 
     <ProgressBar
@@ -45,20 +60,6 @@
             android:layout_marginTop="26dp"
             app:layout_constraintEnd_toEndOf="parent"
             tools:layout_editor_absoluteX="170dp"/>
-    <TextView
-            android:id ="@+id/textNextGoals"
-            app:layout_constraintTop_toBottomOf="@id/progress_button"
-            android:layout_marginTop="10dp"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent"
-    />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>
