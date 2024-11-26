@@ -4,6 +4,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ProgressBar;
+import com.example.feelingsday.ui.home.ListAdapter;
+import com.example.feelingsday.ui.home.ListData;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.navigation.NavController;
@@ -12,19 +14,22 @@ import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import com.example.feelingsday.databinding.ActivityMainBinding;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Vector;
+
 public class MainActivity extends AppCompatActivity {
 
     private ActivityMainBinding binding;
-    private int CurrentProgress = 0;
-    private ProgressBar progressBar;
-    private Button progessButton;
+//    private int CurrentProgress = 0;
+//    private ProgressBar progressBar;
+//    private Button progessButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
         BottomNavigationView navView = findViewById(R.id.nav_view);
         AppBarConfiguration appBarConfiguration = new AppBarConfiguration.Builder(
                 R.id.navigation_home, R.id.navigation_dashboard, R.id.navigation_notifications)
@@ -33,17 +38,17 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-        progressBar = findViewById(R.id.progressbar);
-        progessButton = findViewById(R.id.progress_button);
+      //  progressBar = findViewById(R.id.progressbar);
+       // progessButton = findViewById(R.id.progress_button);
 
-        progessButton.setOnClickListener(new View.OnClickListener(){
-            @Override
-            public void onClick(View v) {
-                CurrentProgress = CurrentProgress + 10;
-                progressBar.setProgress(CurrentProgress);
-                progressBar.setMax(100);
-            }
-        });
+        //progessButton.setOnClickListener(new View.OnClickListener(){
+        //    @Override
+        //    public void onClick(View v) {
+        //        CurrentProgress = CurrentProgress + 10;
+        //        progressBar.setProgress(CurrentProgress);
+        //        progressBar.setMax(100);
+        //    }
+        //});
 
     }
 

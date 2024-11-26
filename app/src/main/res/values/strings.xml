@@ -3,4 +3,21 @@
     <string name="title_home">Home</string>
     <string name="title_calendario">Calendario</string>
     <string name="title_chat">Perfil</string>
+
+    <string name="taskProgrammmerGoals">Home fragment screen
+        \nProfile Fragment screen
+        \nNoificatio fragment screen</string>
+    <string name="taskProgrammmerDesc">
+        Planning and desing of app
+        \nDesign of screen
+        \nProgram the screen
+    </string>
+    <string name="StudyReactGoals">Basic of React
+        \nComponents
+        \nArray Functions</string>
+    <string name="StudyReactDesc">
+        Study to apply
+        \nUndestand Semantics
+        \nMake a Project with React.js
+    </string>
 </resources>

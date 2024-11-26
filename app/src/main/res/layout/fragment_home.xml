@@ -1,29 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.cardview.widget.CardView
+<androidx.constraintlayout.widget.ConstraintLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
-        android:id ="@+id/listItem"
-        app:layout_constraintTop_toBottomOf="@id/progress_button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/homeList"
         android:layout_marginStart="12dp"
         android:layout_marginEnd="12dp"
         android:layout_marginVertical="10dp"
         android:layout_marginHorizontal="10dp"
         app:cardCornerRadius="20dp"
         app:cardElevation="8dp">
-
-    <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"/>
-
-    <com.google.android.material.imageview.ShapeableImageView
-    android:layout_width="60dp"
-    android:layout_height="15dp"
-    android:id="@+id/listImage"
-    android:src="@drawable/laptop_14960026"/>
-
 
     <ProgressBar
             android:id ="@+id/progressbar"
@@ -36,30 +24,15 @@
             app:layout_constraintEnd_toEndOf="parent"
             tools:ignore="MissingConstraints"/>
 
-            <TextView
-            android:id ="@+id/textGoals"
-            app:layout_constraintTop_toBottomOf="@id/progressbar"
-            android:text="1-Programar"
-            android:layout_marginTop="10dp"
+
+    <ListView
+            app:layout_constraintTop_toBottomOf="@+id/progressbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
-            android:textAlignment="center"
-            android:textSize="20sp"
-            />
-    <Button
-            android:id ="@+id/progress_button"
-            android:text="Complete"
-            android:layout_width="120dp"
-            android:layout_height="60dp"
-            tools:layout_editor_absoluteY="241dp"
-            android:textAllCaps="false"
-            app:layout_constraintTop_toBottomOf="@id/textGoals"
-            app:layout_constraintStart_toStartOf="parent"
-            android:layout_marginTop="26dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            tools:layout_editor_absoluteX="170dp"/>
-
-
-</androidx.cardview.widget.CardView>
+            android:layout_height="match_parent"
+            android:id="@+id/listView"
+            tools:listitem="@layout/list_item"
+            android:scrollbars="vertical"
+            android:layout_marginTop="12dp"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="10dp"/>
+</androidx.constraintlayout.widget.ConstraintLayout>
