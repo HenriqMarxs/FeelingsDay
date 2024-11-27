@@ -25,11 +25,11 @@ public class HomeFragment extends Fragment {
         HomeViewModel homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        String [] nameList = {"Program", "Study react"};
-        String [] timeList = {"5 month", "1 year"};
-        int[] imageList = {R.drawable.programmer, R.drawable.study};
-        int [] goalList = {R.string.taskProgrammmerGoals, R.string.StudyReactGoals};
-        int [] descList = {R.string.StudyReactDesc, R.string.StudyReactDesc};
+        String [] nameList = {"Program", "Study react", "Program"};
+        String [] timeList = {"3 month", "7 month","1 years"};
+        int[] imageList = {R.drawable.programmer, R.drawable.study, R.drawable.programmer};
+        int [] goalList = { R.string.taskProgrammmerGoals,R.string.StudyReactGoals,R.string.taskProgrammmerGoals};
+        int [] descList = {R.string.StudyReactDesc, R.string.StudyReactDesc, R.string.StudyReactDesc,};
 
         if(dataArrayList.isEmpty()) {
             for (int i = 0; i < imageList.length; i++) {

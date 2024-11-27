@@ -6,18 +6,19 @@
 
     <string name="taskProgrammmerGoals">Home fragment screen
         \nProfile Fragment screen
-        \nNoificatio fragment screen</string>
+        \nNotification fragment screen</string>
     <string name="taskProgrammmerDesc">
-        Planning and desing of app
+        Planning and design of app
         \nDesign of screen
         \nProgram the screen
     </string>
+
     <string name="StudyReactGoals">Basic of React
         \nComponents
         \nArray Functions</string>
     <string name="StudyReactDesc">
         Study to apply
-        \nUndestand Semantics
+        \nUnderstand Semantics
         \nMake a Project with React.js
     </string>
 </resources>
