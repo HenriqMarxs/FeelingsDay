@@ -11,54 +11,53 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import com.example.feelingsday.R;
+import com.example.feelingsday.Task;
+import com.example.feelingsday.TaskStorage;
 import com.example.feelingsday.databinding.FragmentHomeBinding;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class HomeFragment extends Fragment {
     private FragmentHomeBinding binding;
-    private final ArrayList<ListData> dataArrayList = new ArrayList<ListData>();
     private ListAdapter listAdapter;
+    private List<Task> taskList;
+    private TaskStorage taskStorage;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         HomeViewModel homeViewModel = new ViewModelProvider(this).get(HomeViewModel.class);
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        String [] nameList = {"Program", "Study react", "Program"};
-        String [] timeList = {"3 month", "7 month","1 years"};
-        int[] imageList = {R.drawable.programmer, R.drawable.study, R.drawable.programmer};
-        int [] goalList = { R.string.taskProgrammmerGoals,R.string.StudyReactGoals,R.string.taskProgrammmerGoals};
-        int [] descList = {R.string.StudyReactDesc, R.string.StudyReactDesc, R.string.StudyReactDesc,};
+        taskStorage = new TaskStorage(requireContext());
 
-        if(dataArrayList.isEmpty()) {
-            for (int i = 0; i < imageList.length; i++) {
-                ListData listData = new ListData(nameList[i], timeList[i], goalList[i], descList[i], imageList[i]);
-                dataArrayList.add(listData);
-            }
-        }
-         listAdapter = new ListAdapter(getActivity(), dataArrayList);
-         binding.listView.setAdapter(listAdapter);
-         binding.listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+        taskList = new ArrayList<>();
+        listAdapter = new ListAdapter(requireContext(), taskList);
 
-             public void onItemClick(AdapterView<?> parent, View view, int i, long id) {
-                 Intent intent = new Intent(getActivity(), DetailTaskActivity.class);
-                 intent.putExtra("name", nameList[i]);
-                 intent.putExtra("time", timeList[i]);
-                 intent.putExtra("goal", goalList[i]);
-                 intent.putExtra("desc", descList[i]);
-                 intent.putExtra("image", imageList[i]);
-               startActivity(intent);
-             }
+        binding.listView.setAdapter(listAdapter);
 
-         });
+        binding.listView.setOnItemClickListener((parent, view, position, id) -> {
+            Task selectedTask = taskList.get(position);
+            Intent intent = new Intent(getContext(), DetailTaskActivity.class);
+
+            intent.putExtra("name", selectedTask.getTaskName());
+            intent.putExtra("duration", selectedTask.getTaskDuration());
+            intent.putStringArrayListExtra("goals", new ArrayList<>(selectedTask.getTaskGoals()));
+            intent.putExtra("steps", selectedTask.getTaskSteps());
+            intent.putExtra("image", selectedTask.getImageTask());
+
+            startActivity(intent);
+        });
 
         return root;
     }
 
     @Override
-    public void onDestroyView() {
-        super.onDestroyView();
-        binding = null;
+    public void onResume() {
+        super.onResume();
+        // Atualizar lista de tarefas ao retornar para o fragmento
+        taskList.clear();
+        taskList.addAll(taskStorage.getTasks());
+        listAdapter.notifyDataSetChanged();
     }
 }
