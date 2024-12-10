@@ -31,9 +31,8 @@
                 android:layout_width="250dp"
                 android:layout_height="250dp"
                 android:id="@+id/detailImage"
-                android:layout_marginTop="10dp"
                 android:layout_gravity="center"
-                android:scaleType="centerCrop"
+                android:scaleType="fitCenter"
                 android:src="@drawable/programmer"/>
 
 
@@ -92,5 +91,20 @@
             android:id="@+id/detailDesc"
             android:textSize="16sp"
             android:layout_marginStart="10dp"/>
+    <View
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+    <ImageButton
+            android:id="@+id/deleteTask"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/delete"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:contentDescription="@string/delete_task"
+            android:layout_margin="8dp"
+            android:layout_gravity="center_horizontal"/>
 
 </LinearLayout>

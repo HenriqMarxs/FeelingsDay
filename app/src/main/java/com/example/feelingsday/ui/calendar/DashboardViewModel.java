@@ -1,16 +1,17 @@
-package com.example.feelingsday.ui.Profile;
+package com.example.feelingsday.ui.calendar;
+
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class ProfileViewModel extends ViewModel {
+public class DashboardViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public ProfileViewModel() {
+    public DashboardViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Você não possui nenhum contato adicionado");
+        mText.setValue("Tarefas da data selecionada");
     }
 
     public LiveData<String> getText() {

@@ -2,6 +2,7 @@
     <string name="app_name">To Dum</string>
     <string name="title_home">Home</string>
     <string name="title_calendario">Calendario</string>
+    <string name="delete_task">Delete</string>
 
     <string name="saveTask">Save</string>
 

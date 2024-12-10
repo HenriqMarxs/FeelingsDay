@@ -30,22 +30,18 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         taskStorage = new TaskStorage(requireContext());
-
         taskList = new ArrayList<>();
         listAdapter = new ListAdapter(requireContext(), taskList);
 
         binding.listView.setAdapter(listAdapter);
-
         binding.listView.setOnItemClickListener((parent, view, position, id) -> {
             Task selectedTask = taskList.get(position);
             Intent intent = new Intent(getContext(), DetailTaskActivity.class);
-
             intent.putExtra("name", selectedTask.getTaskName());
             intent.putExtra("duration", selectedTask.getTaskDuration());
             intent.putStringArrayListExtra("goals", new ArrayList<>(selectedTask.getTaskGoals()));
             intent.putExtra("steps", selectedTask.getTaskSteps());
             intent.putExtra("image", selectedTask.getImageTask());
-
             startActivity(intent);
         });
 

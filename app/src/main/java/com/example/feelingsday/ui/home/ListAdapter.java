@@ -8,6 +8,7 @@ import android.widget.BaseAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.example.feelingsday.R;
 import com.example.feelingsday.Task;
 
@@ -62,20 +63,23 @@ public class ListAdapter extends BaseAdapter {
         holder.taskTime.setText(task.getTaskDuration());
 
         // Configurar a imagem da tarefa
-        if (task.getImageTask() != 0) {
-            holder.taskImage.setImageResource(task.getImageTask());
+        if (task.getImageTask() != null && !task.getImageTask().isEmpty()) {
+
+            Glide.with(context)
+                    .load(task.getImageTask())
+                    .placeholder(R.drawable.programmer)
+                    .error(R.drawable.programmer)
+                    .into(holder.taskImage);
         } else {
-            holder.taskImage.setImageResource(R.drawable.programmer); // Imagem padrão
+            holder.taskImage.setImageResource(R.drawable.programmer);
         }
         return convertView;
     }
 
-    // Classe estática para armazenar referências dos elementos de UI
     private static class ViewHolder {
         TextView taskName;
         TextView taskTime;
         ImageView taskImage;
-        TextView taskGoals;
     }
 }
 

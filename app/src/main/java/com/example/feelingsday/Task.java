@@ -7,9 +7,9 @@ public class Task {
     private String taskDuration;
     private List<String> taskGoals;
     private String taskSteps;
-    private int imageTasck;
+    private String imageTasck;
 
-    public Task(String taskName, String taskDuration, List<String>taskGoals, String taskSteps, int imageTasck) {
+    public Task(String taskName, String taskDuration, List<String>taskGoals, String taskSteps, String imageTasck) {
         this.taskName = taskName;
         this.taskDuration = taskDuration;
         this.taskGoals = taskGoals;
@@ -40,10 +40,10 @@ public class Task {
     public void setTaskSteps(String taskSteps) {
         this.taskSteps = taskSteps;
     }
-    public int getImageTask() {
+    public String getImageTask() {
         return imageTasck;
     }
-    public void setImageTask(int imageTasck) {
+    public void setImageTask(String imageTasck) {
         this.imageTasck = imageTasck;
     }
 }

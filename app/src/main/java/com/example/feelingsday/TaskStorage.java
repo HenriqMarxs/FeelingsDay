@@ -38,4 +38,11 @@ public class TaskStorage {
         Type type = new TypeToken<List<Task>>() {}.getType();
         return gson.fromJson(json, type);
     }
+    public boolean deleteTask(Task taskToDelete) {
+        List<Task> tasks = getTasks();
+        tasks.removeIf(task -> task.getTaskName().equals(taskToDelete.getTaskName()) &&
+                task.getTaskDuration().equals(taskToDelete.getTaskDuration()));
+        saveTasks(tasks);
+        return true;
+    }
 }

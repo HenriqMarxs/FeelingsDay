@@ -1,17 +1,16 @@
-package com.example.feelingsday.ui.dashboard;
-
+package com.example.feelingsday.ui.RegisterTask;
 
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
-public class DashboardViewModel extends ViewModel {
+public class RegisterTaskViewModel extends ViewModel {
 
     private final MutableLiveData<String> mText;
 
-    public DashboardViewModel() {
+    public RegisterTaskViewModel() {
         mText = new MutableLiveData<>();
-        mText.setValue("Tarefas da data selecionada");
+        mText.setValue("Você não possui nenhum contato adicionado");
     }
 
     public LiveData<String> getText() {

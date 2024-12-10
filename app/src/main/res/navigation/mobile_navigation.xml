@@ -12,11 +12,11 @@
 
     <fragment
             android:id="@+id/navigation_dashboard"
-            android:name="com.example.feelingsday.ui.dashboard.DashboardFragment"
+            android:name="com.example.feelingsday.ui.calendar.DashboardFragment"
             tools:layout="@layout/fragment_dashboard"/>
 
     <fragment
             android:id="@+id/navigation_notifications"
-            android:name="com.example.feelingsday.ui.Profile.RegisterTaskFragment"
-            tools:layout="@layout/fragment_profile"/>
+            android:name="com.example.feelingsday.ui.RegisterTask.RegisterTaskFragment"
+            tools:layout="@layout/fragment_register_task"/>
 </navigation>

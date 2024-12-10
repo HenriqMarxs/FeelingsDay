@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="50dp"
+            android:fillViewport="true">
+    <LinearLayout
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools" xmlns:app="http://schemas.android.com/apk/res-auto"
+            tools:contex=".DetailActivity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_gravity="center_horizontal"
+            android:padding="24dp">
+        <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/detailName"
+                android:textStyle="bold"
+                android:text="New Task"
+                android:textColor="@color/lightGreen"
+                android:textSize="24sp"
+                android:layout_gravity="center"
+                android:scrollbars="vertical"/>
+        <androidx.cardview.widget.CardView
+                android:layout_width="380dp"
+                android:layout_height="280dp"
+                android:layout_marginTop="1dp"
+                android:layout_gravity="center"
+                app:cardCornerRadius="20dp"
+                app:cardElevation="8dp">
+
+            <ImageView
+                    android:id="@+id/taskImageView"
+                    android:layout_width="150dp"
+                    android:layout_height="150dp"
+                    android:src="@drawable/select_image"
+                    android:contentDescription="select image"
+                    android:layout_gravity="center"
+                    android:scaleType="fitCenter"/>
+
+        </androidx.cardview.widget.CardView>
+
+        <Button
+                android:id="@+id/selectImageButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Select image"
+                android:layout_gravity="center"
+                android:layout_marginTop="8dp" />
+        <EditText
+                android:layout_margin="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/nameInput"
+                android:hint="Name of Task"
+                android:textSize="16sp"
+                android:layout_marginStart="10dp"/>
+        <EditText
+                android:layout_margin="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/durationInput"
+                android:hint="Duration of task"
+                android:textSize="16sp"
+                android:layout_marginStart="10dp"/>
+
+
+        <LinearLayout
+                android:id="@+id/goalsContainer"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="center_horizontal"
+                android:padding="24dp">
+                <EditText
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:id="@+id/goalsInput"
+                        android:hint="Goal"
+                        android:textSize="16sp"/>
+
+                <ImageButton
+                        android:id="@+id/addGoal"
+                        android:scaleType="centerCrop"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:src="@drawable/add"
+                        android:contentDescription="More goals"
+                        android:background="?attr/selectableItemBackgroundBorderless"
+                        android:layout_marginStart="8dp" />
+            </LinearLayout>
+
+        <EditText
+                android:layout_margin="25dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/stepsInput"
+                android:hint="Steps"
+                android:textSize="16sp"
+                android:layout_marginStart="10dp"/>
+        <Button
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="@string/saveTask"
+                android:id="@+id/saveTask"
+                android:textSize="20sp"
+                android:layout_gravity="center"/>
+
+        <Button
+                android:layout_toEndOf="@+id/saveTask"
+                android:layout_width="350dp"
+                android:layout_height="wrap_content"
+                android:text="import"
+                android:id="@+id/importTask"
+                android:textSize="20sp"
+                android:layout_gravity="center"/>
+        </LinearLayout>
+
+</ScrollView>

@@ -38,17 +38,7 @@ public class MainActivity extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
 
-      //  progressBar = findViewById(R.id.progressbar);
-       // progessButton = findViewById(R.id.progress_button);
 
-        //progessButton.setOnClickListener(new View.OnClickListener(){
-        //    @Override
-        //    public void onClick(View v) {
-        //        CurrentProgress = CurrentProgress + 10;
-        //        progressBar.setProgress(CurrentProgress);
-        //        progressBar.setMax(100);
-        //    }
-        //});
 
     }
 
