@@ -1,4 +1,4 @@
-### Task Manager - Aplicativo de Gerenciamento de Tarefas
+### To Dum - Aplicativo de Gerenciamento de Tarefas
 
 Bem-vindo ao **To Dum**, um aplicativo mobile desenvolvido para facilitar a organização e o acompanhamento de tarefas, metas e etapas de projetos de forma simples e intuitiva. 
 Este projeto foi concebido com o objetivo de combinar funcionalidade, flexibilidade e uma interface amigável para atender tanto às necessidades pessoais quanto profissionais.
