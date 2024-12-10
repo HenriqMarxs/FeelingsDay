@@ -48,7 +48,6 @@ public class ImportTask extends AppCompatActivity {
 
                 InputStream inputStream = new BufferedInputStream(connection.getInputStream());
                 BufferedReader reader = new BufferedReader(new InputStreamReader(inputStream));
-
                 StringBuilder response = new StringBuilder();
                 String line;
                 while ((line = reader.readLine()) != null) {
@@ -84,8 +83,6 @@ public class ImportTask extends AppCompatActivity {
             List<Task> tasks = taskStorage.getTasks();
             tasks.add(newTask);
             taskStorage.saveTasks(tasks);
-
-            // Aqui, você pode criar uma nova tarefa ou enviar de volta para a tela anterior
             runOnUiThread(() -> {
                 // Exibir os dados ou salvar no banco de dados
                 Toast.makeText(this, "Tarefa Importada: " + name, Toast.LENGTH_SHORT).show();

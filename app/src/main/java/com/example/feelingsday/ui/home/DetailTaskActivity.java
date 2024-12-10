@@ -43,7 +43,7 @@ public class DetailTaskActivity extends AppCompatActivity {
             if (image != null && !image.isEmpty()) {
                 Glide.with(this)
                         .load(image)  // Pode ser URL ou caminho local
-                        .placeholder(R.drawable.programmer)  // Imagem temporária enquanto carrega
+                        .placeholder(R.drawable.study)  // Imagem temporária enquanto carrega
                         .error(R.drawable.programmer)
                         .apply(RequestOptions.fitCenterTransform())
                         .into(binding.detailImage);

@@ -67,11 +67,11 @@ public class ListAdapter extends BaseAdapter {
 
             Glide.with(context)
                     .load(task.getImageTask())
-                    .placeholder(R.drawable.programmer)
+                    .placeholder(R.drawable.study)
                     .error(R.drawable.programmer)
                     .into(holder.taskImage);
         } else {
-            holder.taskImage.setImageResource(R.drawable.programmer);
+            holder.taskImage.setImageResource(R.drawable.study);
         }
         return convertView;
     }
